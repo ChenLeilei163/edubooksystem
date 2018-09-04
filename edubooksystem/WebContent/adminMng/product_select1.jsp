@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>后台管理</title>
+<title>商品基本信息管理</title>
 	<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -196,48 +196,60 @@
 </div>
     <!-- /.sidebar -->
   </aside>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" >
-            <!-- Calendar -->
-            <div class="card bg-success-gradient">
-              <div class="card-header no-border">
-                <h3 class="card-title">
-                  <i class="fa fa-calendar"></i>
-                  Calendar
-                </h3>
-                <!-- tools card -->
-                <div class="card-tools">
-                  <!-- button with a dropdown -->
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-bars"></i></button>
-                      <div class="dropdown-menu float-right" role="menu">
-	                      <a href="#" class="dropdown-item">Add new event</a>
-	                      <a href="#" class="dropdown-item">Clear events</a>
-                      	  <div class="dropdown-divider"></div>
-                      	  <a href="#" class="dropdown-item">View calendar</a>
-                  	  </div>
-                  </div>
-                  <button type="button" class="btn btn-success btn-sm" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-success btn-sm" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
-                <!-- /. tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </section>
-          <!-- right col -->
-  </div>
+	<form action="">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="8" style="background:#5959AB;">商品基本信息查询</td>
+			</tr>
+			<tr>
+				<td>商品名称</td>
+				<td><input type="text" name="bookname"/></td>
+				<td>商品价格</td>
+				<td><input type="text" name="bookprice"/></td>
+				<td>适合学科</td>
+				<td>
+					<select>
+						<option>--请选择--</option>
+						<option>语文</option>
+						<option>数学</option>
+						<option>英语</option>
+						<option>历史</option>
+						<option>其他</option>
+						<option>自然</option>
+						<option>思想品德</option>
+						<option>美术</option>
+						<option>地理</option>
+						<option>音乐</option>
+					</select>
+				</td>
+				<td>适合年级</td>
+				<td>
+					<select>
+						<option>--请选择--</option>
+						<option>一年级</option>
+						<option>二年级</option>
+						<option>三年级</option>
+						<option>四年级</option>
+						<option>五年级</option>
+						<option>六年级</option>
+						<option>初一</option>
+						<option>初二</option>
+						<option>初三</option>
+						<option>高一</option>
+						<option>高二</option>
+						<option>高三</option>
+						<option>小学</option>
+						<option>初中</option>
+						<option>高中</option>
+						<option>不限</option>
+					</select>
+				</td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
+		</table>
+	</form>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>

@@ -13,7 +13,6 @@
 <link href="<%=basePath%>adminMng/css/demo.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="<%=basePath%>adminMng/js/jquery1.42.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>adminMng/js/jquery.SuperSlide.js"></script>
-<script type="text/javascript" src="<%=basePath%>adminMng/js/Validform_v5.3.2_min.js"></script>
 
 <script>
 	$(function(){
@@ -93,7 +92,7 @@
 </div>
 </div>
 <div class="header">
-  <h1 class="headerLogo"><a title="后台管理系统" target="_blank" href="http://www.huiyi8.com/"><img alt="logo" src="images/logo.gif"></a></h1>
+  <h1 class="headerLogo"><a title="后台管理系统" target="_blank" href="http://www.huiyi8.com/"><img alt="logo" src="images/logo.gif" /></a></h1>
 	<div class="headerNav">
 		<a target="_blank" href="http://www.huiyi8.com/">华软官网</a>
 		<a target="_blank" href="http://www.huiyi8.com/">关于华软</a>
@@ -108,7 +107,7 @@
   		<div id="o-box-up"></div>
   		<div id="o-box-down"  style="table-layout:fixed;">
 	  		<div class="error-box"></div>
-			<form class="registerform" action="AdminServlet&method=login" mehod="post">
+			<form class="registerform" action="AdminServlet?method=login" method="post">
 			  <div class="fm-item">
 				   <label for="logonId" class="form-label">后台管理员系统登陆:</label>
 				   <input type="text" value="输入账号" maxlength="100" id="username" name="adminname" class="i-text" ajaxurl="demo/valid.jsp"  datatype="s6-18" errormsg="用户名至少6个字符,最多18个字符！"  >    

@@ -1,7 +1,9 @@
 package com.chenlei.edubook.service;
 
-import com.chenlei.edubook.domain.Adminer;
+import com.chenlei.edubook.domain.Assorter;
 
 public interface AdminService {
-	public boolean AdminLoginCheck(Adminer adminer);
+	
+	public Assorter LoginCheck(Assorter assorter);
+
 }
