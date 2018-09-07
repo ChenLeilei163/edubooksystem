@@ -17,7 +17,6 @@
 <script>
 	$(function(){
 		
-	
 		$(".i-text").focus(function(){
 			$(this).addClass('h-light');
 		});

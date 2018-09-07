@@ -19,7 +19,7 @@ public class AdminDaoimpl extends DBUtil implements AdminDao{
 	@Override
 	public Assorter AdminLoginCheck(Assorter assorter) {
 		connection = getCnt();
-		sql = "select * from assorter_right where arname = ? and arpassword = ?";
+		sql = "select * from assorter_right where arname = ? and arpwd = ?";
 		try {
 			ps = connection.prepareStatement(sql);
 			ps.setString(1, assorter.getArname());
@@ -28,7 +28,7 @@ public class AdminDaoimpl extends DBUtil implements AdminDao{
 			while (rs.next()) {
 				assorter = new Assorter();
 				assorter.setArname(rs.getString("arname"));
-				assorter.setArpwd(rs.getString("arpassword"));
+				assorter.setArpwd(rs.getString("arpwd"));
 				assorter.setBumen(rs.getString("bumen"));
 				assorter.setBumename(rs.getString("bumename"));
 				assorter.setUnitname(rs.getString("unitname"));

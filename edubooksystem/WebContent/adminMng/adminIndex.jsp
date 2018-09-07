@@ -78,25 +78,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="product_select1.jsp" class="nav-link">
+                <a href="ProductMsgServlet&method=page" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>商品基本信息管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="product_select2.jsp" class="nav-link">
+                <a href="ProductMsgServlet" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>商品评论信息管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="product_select3.jsp" class="nav-link">
+                <a href="ProductMsgServlet" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>促销商品信息管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="product_select4.jsp" class="nav-link">
+                <a href="ProductMsgServlet" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>商品审核管理</p>
                 </a>

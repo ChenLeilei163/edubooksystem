@@ -31,7 +31,6 @@ public class AdminServlet extends HttpServlet {
 		assorter = new Assorter();
 		assorter.setArname(adminname);
 		assorter.setArpwd(adminpwd);
-//		System.out.println(111);
 		if(adminService.LoginCheck(assorter) != null){
 			request.getSession().setAttribute("assorter", adminService.LoginCheck(assorter));
 			response.sendRedirect("adminMng/adminIndex.jsp");

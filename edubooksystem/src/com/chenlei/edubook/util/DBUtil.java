@@ -11,7 +11,7 @@ public class DBUtil {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			 conn = DriverManager.getConnection(
-					"jdbc:mysql://192.168.90.154:3306/edubooksystem?useUnicode=true&characterEncoding=UTF-8", "root", "805230");
+					"jdbc:mysql://192.168.90.142:3306/lanoudb?useUnicode=true&characterEncoding=UTF-8", "root", "123456");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -14,4 +14,10 @@ public class AdminServiceimpl implements AdminService{
 		return adminDao.AdminLoginCheck(assorter);
 	}
 
+	@Override
+	public int getTotalIndex() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

@@ -1,313 +1,199 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>商品基本信息管理</title>
-	<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="dist/css/adminlte.min.css">
-	<!-- iCheck -->
-	<link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
-	<!-- Morris chart -->
-	<link rel="stylesheet" href="plugins/morris/morris.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-	<!-- Date Picker -->
-	<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-	<!-- Daterange picker -->
-	<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
-	<!-- bootstrap wysihtml5 - text editor -->
-	<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-	<!-- Google Font: Source Sans Pro -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<title>页面查询</title>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  	<span style="float:right;">现在是  <font color="red">${assorter.arname}</font>同志正在使用此系统 | 所在单位:<font color="red">${assorter.unitname}</font> | 所在部门:<font color="red">${assorter.bumen}</font> | 权限:<font color="red">${assorter.bumename}</font></span>
-  </nav>
-  
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">后台管理</span>
-    </a>
-    
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>供应商商品管理<i class="right fa fa-angle-left"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="product_select1.jsp" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>商品基本信息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="product_select2.jsp" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>商品评论信息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="product_select3.jsp" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>促销商品信息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="product_select4.jsp" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>商品审核管理</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
-              <p>商品订单管理<i class="fa fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>商品订单状态查询管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>商品销售额查询管理</p>
-                </a>
-              </li>              
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-edit"></i>
-              <p>系统管理<i class="fa fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>系统日志信息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>短信消息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>供应商管理</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>密码管理</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-table"></i>
-              <p>积分兑换商品管理<i class="fa fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>积分兑换商品信息管理</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>积分兑换记录信息管理</p>
-                </a>
-              </li>
-            </ul>
-          </li>
- 		  <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-table"></i>
-              <p>会员管理<i class="fa fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>会员信息管理</p>
-                </a>
-              </li>              
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-</div>
-    <!-- /.sidebar -->
-  </aside>
-	<form action="">
-		<table border="1" cellspacing="0" cellpadding="0">
-			<tr>
-				<td colspan="8" style="background:#5959AB;">商品基本信息查询</td>
-			</tr>
+<body>
+<script type="text/javascript">
+	$(function(){
+		var xiaolei = [["幼儿园/学前教育","学科教学","教师成长","课堂教学/课堂管理","教育经典名著","班主任用书","学校管理","心理健康"],["课外阅读","新课标","古诗词/文言文"],["志愿填报","高考作文","美术/音乐/广播","高考辅导","高校自主招生","高考模拟试题","对口升学"],["一般管理学","市场/营销  金融/投资","电子商务","会计","创业企业与企业家","生产与运作管理","管理信息系统","商务沟通"],["科普/百科","中国儿童文学","图画书","外国儿童文学","幼儿启蒙"],["外语考试","公务员考试","计算机考试","自学考试","成人高考","考研"],["中国当代小说","外国小说  社会","情感","世界名著","历史","科幻","作品集","青春文学"],["杂志/期刊"]];
+		$("#btype1").change(function(){
+			$("#btype2").empty();
+			for(var i = 0;i < xiaolei[$(this).val()-1].length;i++){
+				$("#btype2").append($("<option>").html(xiaolei[$(this).val() - 1][i]));
+			}
+		})
+		
+		$("#btype1").change();
+		
+		
+		$("#save").click(function(){
+			window.location = "ProductMsgServlet?method=save";
+		})
+		
+		$("#import").click(function(){
+			
+		})
+		
+		$("#export").click(function(){
+			
+		})
+		
+		$("#remove_bat").click(function(){
+			
+		})
+		
+		
+		
+	})
+</script>
+	<form action="productMsgServlet" method="post">
+		<table border='1' cellpadding="0" cellspacing="0" >
+			<tr bgcolor="blue"><td colspan="8">商品基本信息查询</td></tr>
 			<tr>
 				<td>商品名称</td>
 				<td><input type="text" name="bookname"/></td>
 				<td>商品价格</td>
-				<td><input type="text" name="bookprice"/></td>
+				<td><input type="text" name="bookprice" /></td>
 				<td>适合学科</td>
 				<td>
 					<select>
-						<option>--请选择--</option>
-						<option>语文</option>
-						<option>数学</option>
-						<option>英语</option>
-						<option>历史</option>
-						<option>其他</option>
-						<option>自然</option>
-						<option>思想品德</option>
-						<option>美术</option>
-						<option>地理</option>
-						<option>音乐</option>
+						<option value="0">--请选择--</option>
+						<option value="1">语文</option>
+						<option value="2">数学</option>
+						<option value="3">英语</option>
+						<option value="4">历史</option>
+						<option value="5">其他</option>
+						<option value="6">自然</option>
+						<option value="7">思想品德</option>
+						<option value="8">美术</option>
+						<option value="9">地理</option>
+						<option value="10">音乐</option>
 					</select>
 				</td>
 				<td>适合年级</td>
 				<td>
 					<select>
-						<option>--请选择--</option>
-						<option>一年级</option>
-						<option>二年级</option>
-						<option>三年级</option>
-						<option>四年级</option>
-						<option>五年级</option>
-						<option>六年级</option>
-						<option>初一</option>
-						<option>初二</option>
-						<option>初三</option>
-						<option>高一</option>
-						<option>高二</option>
-						<option>高三</option>
-						<option>小学</option>
-						<option>初中</option>
-						<option>高中</option>
-						<option>不限</option>
+						<option value="0">--请选择--</option>
+						<option value="1">一年级</option>
+						<option value="2">二年级</option>
+						<option value="3">三年级</option>
+						<option value="4">四年级</option>
+						<option value="5">五年级</option>
+						<option value="6">六年级</option>
+						<option value="7">初一</option>
+						<option value="8">初二</option>
+						<option value="9">初三</option>
+						<option value="10">高一</option>
+						<option value="11">高二</option>
+						<option value="12">高三</option>
+						<option value="13">小学</option>
+						<option value="14">初中</option>
+						<option value="15">高中</option>
+						<option value="16">不限</option>
 					</select>
 				</td>
 			</tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
+			<tr>
+				<td>作者</td>
+				<td><input type="text" name="author"/></td>
+				<td>出版社</td>
+				<td><input type="text" name="chubanshe"/></td>
+				<td>条形码</td>
+				<td><input type="text" name="isbn"/></td>
+				<td>出版时间</td>
+				<td><td>
+			</tr>
+			<tr>
+				<td>商品类型</td>
+				<td>
+					<select id='btype1'>
+						<option value="0">选择大类</option>
+						<option value="1">教育理论/教师用书</option>
+						<option value="2">中小学阅读</option>
+						<option value="3">高考</option>
+						<option value="4">管理</option>
+						<option value="5">童书</option>
+						<option value="6">考试</option>
+						<option value="7">小说</option>
+						<option value="8">杂志期刊</option>
+					</select>
+					<select id='btype2'>
+ 						<option value="0">选择小类</option> 
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<input type="submit" value="查询" />
+					<input type="button" value="添加" id="save"/>
+					<input type="button" value="导入" id="import"/>
+					<input type="button" value="导出" id="export"/>
+					<input type="button" value="批量删除" id="remove_bat"/>
+				</td>
+			</tr>
 		</table>
 	</form>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2018 <a href="#">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-alpha
-    </div>
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
+	
+	
+	<table>
+		<tr>
+			<td><input type="checkbox" id="allcheck"/>全选</td>
+			<td>商品编号</td>
+			<td>商品名称</td>
+			<td>订阅期限</td>
+			<td>商品价格</td>
+			<td>商品折扣</td>
+			<td>审核状态</td>
+			<td>适合学科</td>
+			<td>适合年级</td>
+			<td>作者</td>
+			<td>出版社</td>
+			<td>出版时间</td>
+			<td>条形码</td>
+			<td>积分抵用数</td>
+			<td>操作</td>
+		</tr>
+		<c:forEach var="bookinfo" items="${bookinfos}">
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td>${bookinfo.bookid}</td>
+			<td>${bookinfo.bookname}</td>
+			<td>${bookinfo.qixian}</td>
+			<td>${bookinfo.bookprice}</td>
+			<td>${bookinfo.discount}</td>
+			<td>${bookinfo.state}</td>
+			<td>${bookinfo.shihezhuanye}</td>
+			<td>${bookinfo.shihenianji}</td>
+			<td>${bookinfo.auth}</td>
+			<td>${bookinfo.chubanshe}</td>
+			<td>${bookinfo.shijian}</td>
+			<td>${bookinfo.isbn}</td>
+			<td>${bookinfo.jifen}</td>
+			<td>
+<script type="text/javascript">
+	$(function(){
+		$("#edit").click(function(){
+			window.location = "";
+			
+		})
+		
+		$("#view").click(function(){
+			window.location = "";
+			
+		})
+		
+		
+		
+		$("#delete").click(function(){
+			$(this).parent().remove();
+			window.location = "ProductMsgServlet?&method=delete";
+		})
+		
+	})
 </script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+				<img src="images/edit.gif" id="edit"/>
+				<img src="images/view.gif" id="view"/>
+				<img src="images/delete.gif" id="delete"/>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr></tr>
+	</table>
 </body>
 </html>
